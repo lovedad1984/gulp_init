@@ -1,1 +1,96 @@
-$red: #ce4647;
+/*
+---------------------------------------------------------------
+*
+* fonts
+*
+---------------------------------------------------------------
+*/
+
+@font-face {
+	font-family: 'noto-sans-scott-l';
+	src: url('../fonts/NotoSansCJKkr-Light.eot');
+	src: url('../fonts/NotoSansCJKkr-Light.eot') format('embedded-opentype'), url('../fonts/NotoSansCJKkr-Light.woff') format('woff'), url('../fonts/NotoSansCJKkr-Light.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'noto-sans-scott-dl';
+	src: url('../fonts/NotoSansCJKkr-DemiLight.eot');
+	src: url('../fonts/NotoSansCJKkr-DemiLight.eot') format('embedded-opentype'), url('../fonts/NotoSansCJKkr-DemiLight.woff') format('woff'), url('../fonts/NotoSansCJKkr-DemiLight.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'noto-sans-scott-r';
+	src: url('../fonts/NotoSansCJKkr-Regular.eot');
+	src: url('../fonts/NotoSansCJKkr-Regular.eot') format('embedded-opentype'), url('../fonts/NotoSansCJKkr-Regular.woff') format('woff'), url('../fonts/NotoSansCJKkr-Regular.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'noto-sans-scott-m';
+	src: url('../fonts/NotoSansCJKkr-Medium.eot');
+	src: url('../fonts/NotoSansCJKkr-Medium.eot') format('embedded-opentype'), url('../fonts/NotoSansCJKkr-Medium.woff') format('woff'), url('../fonts/NotoSansCJKkr-Medium.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'noto-sans-scott-b';
+	src: url('../fonts/NotoSansCJKkr-Bold.eot');
+	src: url('../fonts/NotoSansCJKkr-Bold.eot') format('embedded-opentype'), url('../fonts/NotoSansCJKkr-Bold.woff') format('woff'), url('../fonts/NotoSansCJKkr-Bold.otf') format('truetype');
+}
+@font-face {
+	font-family: 'noto-sans-scott-t';
+	src: url('../fonts/NotoSansCJKkr-Thin.eot');
+	src: url('../fonts/NotoSansCJKkr-Thin.eot') format('embedded-opentype'), url('../fonts/NotoSansCJKkr-Thin.woff') format('woff'), url('../fonts/NotoSansCJKkr-Thin.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumSquareL';
+	src: url('../fonts/NanumSquareL.eot');
+	src: url('../fonts/NanumSquareL.eot') format('embedded-opentype'), url('../fonts/NanumSquareL.woff') format('woff'), url('../fonts/NanumSquareL.otf') format('truetype');
+}
+@font-face {
+	font-family: 'NanumSquareB';
+	src: url('../fonts/NanumSquareB.eot');
+	src: url('../fonts/NanumSquareB.eot') format('embedded-opentype'), url('../fonts/NanumSquareB.woff') format('woff'), url('../fonts/NanumSquareB.otf') format('truetype');
+}
+@font-face {
+	font-family: 'NanumSquareR';
+	src: url('../fonts/NanumSquareR.eot');
+	src: url('../fonts/NanumSquareR.eot') format('embedded-opentype'), url('../fonts/NanumSquareR.woff') format('woff'), url('../fonts/NanumSquareR.otf') format('truetype');
+}
+@font-face {
+	font-family: 'NanumSquareEB';
+	src: url('../fonts/NanumSquareEB.eot');
+	src: url('../fonts/NanumSquareEB.eot') format('embedded-opentype'), url('../fonts/NanumSquareEB.woff') format('woff'), url('../fonts/NanumSquareEB.otf') format('truetype');
+}
+
+body {
+	font-family: 'noto-sans-scott-dl';
+	font-size: 16px;
+	color: #222;
+}
+
+b, strong {
+	font-family: 'noto-sans-scott-m';
+}
+
+$l: 'noto-sans-scott-l';
+$dl: 'noto-sans-scott-dl';
+$r: 'noto-sans-scott-r';
+$m: 'noto-sans-scott-m';
+$b: 'noto-sans-scott-b';
+$t: 'noto-sans-scott-t';
+$ns-l: 'NanumSquareL';
+$ns-r: 'NanumSquareR';
+$ns-b: 'NanumSquareB';
+$ns-eb: 'NanumSquareEB';
+
+@mixin text_ellipsis($lh,$row) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $row;
+    -webkit-box-orient: vertical;
+    word-wrap:break-word; 
+    line-height: $lh;
+    height: $lh*$row;
+}
+
