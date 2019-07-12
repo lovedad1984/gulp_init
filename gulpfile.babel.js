@@ -82,7 +82,7 @@ const watch = () => {
 const styles = () => 
     gulp
     .src(routes.scss.src)
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on("error", sass.logError))
     .pipe(
         autoprefixer({
             browsers: ["last 2 versions"]
@@ -104,7 +104,7 @@ const js = () =>
 
 const copyfonts = () =>
     gulp
-    .src('src/fonts/**/*.{ttf,woff,eot,svg}')  
+    .src('src/fonts/**/*.{otf,ttf,woff,eot,svg}')  
     .pipe(gulp.dest('build/fonts/'));  
 
 const prepare = gulp.series([clean, img]);
