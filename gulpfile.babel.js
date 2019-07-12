@@ -10,6 +10,7 @@ import bro from 'gulp-bro';
 import babelify from 'babelify';
 import ghPages from 'gulp-gh-pages';
 
+
 sass.compiler = require('node-sass');
 
 const routes = {
@@ -37,6 +38,7 @@ const routes = {
         src: "src/js/main.js",
         dest: "build/js"
     }
+    
 }
 
 // const pug = () => gulp
@@ -61,6 +63,8 @@ const img = () =>
     .src(routes.img.src)
     .pipe(image())
     .pipe(gulp.dest(routes.img.dest));
+
+
 
 const ghDeploy = () => 
     gulp
@@ -97,12 +101,16 @@ const js = () =>
             ]
         }))
         .pipe(gulp.dest(routes.js.dest));
-  
+
+const copyfonts = () =>
+    gulp
+    .src('src/fonts/**/*.{ttf,woff,eot,svg}')  
+    .pipe(gulp.dest('build/fonts/'));  
 
 const prepare = gulp.series([clean, img]);
 const assets = gulp.series([html, styles, js]); // pug
 const live = gulp.parallel([webserver, watch]);
 
-export const build = gulp.series([prepare, assets]);
+export const build = gulp.series([prepare, assets, copyfonts]);
 export const dev = gulp.series([build, live]);
 export const deploy = gulp.series([build, ghDeploy]);
